@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
     ProductName:{type:String,required:true},
-    PicePerKg:{type:Number,required:true},
+    PricePerKg:{type:Number,required:true},
     PricePerBag:{type:Number,required:true},
 },
 {

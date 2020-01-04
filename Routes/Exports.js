@@ -12,9 +12,9 @@ router.route("/").get((req,res)=>{
 router.route("/add").post((req,res)=>{
 
    const ProductName=req.body.ProductName;
-   const Total=req.body.Total;
+   const Total=Number(req.body.Total);
    const Customer=req.body.Customer;
-   const Customer_Phone_No=req.body.Customer_Phone_No;
+   const Customer_Phone_No=Number(req.body.Customer_Phone_No);
 
     const newExport= new Export({
         ProductName,
@@ -38,9 +38,9 @@ router.route("/update/:id").put((req,res)=>{
     Export.findById(req.params.id)
     .then(Export=>{
         Export.ProductName=req.body.ProductName;
-        Export.Total=req.body.Total;
+        Export.Total=Number(req.body.Total);
         Export.Customer=req.body.Customer;
-        Export.Customer_Phone_No=req.body.Customer_Phone_No;
+        Export.Customer_Phone_No=Number(req.body.Customer_Phone_No);
 
         Export.save()
         .then(()=>res.json("Export Updated"))

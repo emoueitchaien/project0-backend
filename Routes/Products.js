@@ -12,12 +12,12 @@ router.route("/").get((req,res)=>{
 router.route("/add").post((req,res)=>{
 
    const ProductName=req.body.ProductName;
-   const PicePerKg=req.body.PicePerKg;
-   const PricePerBag=req.body.PricePerBag;
+   const PricePerKg= Number(req.body.PricePerKg);
+   const PricePerBag= Number(req.body.PricePerBag);
 
     const newProduct= new Products({
         ProductName,
-        PicePerKg,
+        PricePerKg,
         PricePerBag
     });
 
@@ -36,8 +36,8 @@ router.route("/update/:id").put((req,res)=>{
     Products.findById(req.params.id)
     .then(product=>{
         product.ProductName=req.body.ProductName;
-        product.PicePerKg=req.body.PicePerKg;
-        product.PricePerBag=req.body.PricePerBag;
+        product.PicePerKg=Number(req.body.PicePerKg);
+        product.PricePerBag=Number(req.body.PricePerBag);
 
         product.save()
         .then(()=>res.json("Products Updated"))

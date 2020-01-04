@@ -12,9 +12,9 @@ router.route("/").get((req,res)=>{
 router.route("/add").post((req,res)=>{
 
    const ProductName=req.body.ProductName;
-   const Total=req.body.Total;
+   const Total=Number(req.body.Total);
    const Merchant=req.body.Merchant;
-   const Merchant_Phone_No=req.body.Merchant_Phone_No;
+   const Merchant_Phone_No=Number(req.body.Merchant_Phone_No);
 
     const newImport= new Import({
         ProductName,
@@ -38,9 +38,9 @@ router.route("/update/:id").put((req,res)=>{
     Import.findById(req.params.id)
     .then(Import=>{
         Import.ProductName=req.body.ProductName;
-        Import.Total=req.body.Total;
+        Import.Total=Number(req.body.Total);
         Import.Merchant=req.body.Merchant;
-        Import.Merchant_Phone_No=req.body.Merchant_Phone_No;
+        Import.Merchant_Phone_No=Number(req.body.Merchant_Phone_No);
 
         Import.save()
         .then(()=>res.json("Import Updated"))
