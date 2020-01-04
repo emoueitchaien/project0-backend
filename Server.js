@@ -3,8 +3,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 //importing routes
 const Productsrouter = require("./Routes/Products");
-const importsrouter = require("./Routes/imports");
-const exportsrouter =require("./Routes/exports");
+const Importsrouter = require("./Routes/Imports");
+const Exportsrouter =require("./Routes/Exports");
 
 require("dotenv").config();
 
@@ -25,8 +25,8 @@ connection.once("open",()=>{console.log("MongoDB connection established sucessfu
 
 //Router Operations
 app.use("/products",Productsrouter);
-app.use("/imports",importsrouter);
-app.use("/exports",exportsrouter);
+app.use("/imports",Importsrouter);
+app.use("/exports",Exportsrouter);
 
 Port = process.env.PORT || 5000;
 

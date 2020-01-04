@@ -1,7 +1,7 @@
 const express = require("express");
 router=express.Router();
 //Importing Schema
-const Export = require("../Models/exports.model");
+const Export = require("../Models/Exports.model");
 
 router.route("/").get((req,res)=>{
     Export.find()
@@ -54,3 +54,5 @@ router.route("/delete/:id").delete((req,res)=>{
     .then(Export=>res.json(Export))
     .catch(err=>res.status(400).json("Error:"+err));
 })
+
+module.exports= router;
