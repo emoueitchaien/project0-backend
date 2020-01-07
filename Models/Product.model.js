@@ -5,6 +5,7 @@ const ProductSchema = new Schema({
     ProductName:{type:String,required:true},
     PricePerKg:{type:Number,required:true},
     PricePerBag:{type:Number,required:true},
+    Available:{type:Number,required:true},
 },
 {
     timestamps:true,

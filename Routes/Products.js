@@ -14,11 +14,13 @@ router.route("/add").post((req,res)=>{
    const ProductName=req.body.ProductName;
    const PricePerKg= Number(req.body.PricePerKg);
    const PricePerBag= Number(req.body.PricePerBag);
+   const Available= Number(req.body.Available);
 
     const newProduct= new Products({
         ProductName,
         PricePerKg,
-        PricePerBag
+        PricePerBag,
+        Available
     });
 
     newProduct.save()
@@ -38,6 +40,7 @@ router.route("/update/:id").put((req,res)=>{
         product.ProductName=req.body.ProductName;
         product.PicePerKg=Number(req.body.PicePerKg);
         product.PricePerBag=Number(req.body.PricePerBag);
+        product.Available=Number(req.body.Available);
 
         product.save()
         .then(()=>res.json("Products Updated"))
