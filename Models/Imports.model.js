@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 const ImportSchema = new Schema({
     ProductName:{type: String, required:true},
+    Quantity:{type:Number,required:true},
+    Rate:{type:Number,required:true},
+    mod:{type:Boolean,required:true},
     Total:{type:Number,required:true},
     Merchant:{type:String,required:true},
     Merchant_Phone_No:{type:String,required:true},
