@@ -8,7 +8,7 @@ const ExportSchema = new Schema({
     Total:{type:Number,required:true},
     Customer:{type:String,required:true},
     Customer_Phone_No:{type:String,required:true},
-    mod:{type:Boolean,required:true}
+    // mod:{type:Boolean,required:true}
 },{
     timestamps:true,
 });

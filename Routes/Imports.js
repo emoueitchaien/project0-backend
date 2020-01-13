@@ -14,7 +14,7 @@ router.route("/add").post((req,res)=>{
    const ProductName=req.body.ProductName;
    const Quantity=Number(req.body.Quantity);
    const Rate=Number(req.body.Rate);
-   const mod=Boolean(req.body.mod);
+//    const mod=Boolean(req.body.mod);
    const Total=Number(req.body.Total);
    const Merchant=req.body.Merchant;
    const Merchant_Phone_No=Number(req.body.Merchant_Phone_No);
@@ -23,7 +23,7 @@ router.route("/add").post((req,res)=>{
        ProductName,
        Quantity,
        Rate,
-       mod,
+    //    mod,
        Total,
        Merchant,
        Merchant_Phone_No
@@ -46,7 +46,7 @@ router.route("/update/:id").put((req,res)=>{
         Import.ProductName=req.body.ProductName;
         Import.Quantity=Number(req.body.Quantity);
         Import.Rate=Number(req.body.Rate);
-        Import.mod=Boolean(req.body.mod);
+        // Import.mod=Boolean(req.body.mod);
         Import.Total=Number(req.body.Total);
         Import.Merchant=req.body.Merchant;
         Import.Merchant_Phone_No=Number(req.body.Merchant_Phone_No);
