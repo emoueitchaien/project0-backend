@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Productsrouter = require("./Routes/Products");
 const Importsrouter = require("./Routes/Imports");
 const Exportsrouter =require("./Routes/Exports");
+const Confidential = require('./Routes/Pass');
 
 require("dotenv").config();
 
@@ -27,6 +28,7 @@ connection.once("open",()=>{console.log("MongoDB connection established sucessfu
 app.use("/products",Productsrouter);
 app.use("/imports",Importsrouter);
 app.use("/exports",Exportsrouter);
+app.use('/login',Confidential);
 
 Port = process.env.PORT || 5000;
 
