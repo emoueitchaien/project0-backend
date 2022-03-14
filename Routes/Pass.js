@@ -4,7 +4,6 @@ const router = express.Router();
 const Confidential = require("../Models/Confidential.model");
 
 router.route("/").get((req, res) => {
-  res.send("Hello there from github");
   Confidential.find()
     .then((pass) => res.json(pass))
     .catch((err) => res.status(400).json("Error:" + err));
